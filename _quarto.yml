@@ -1,0 +1,30 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "QMII & QFT Notes"
+  site-url: "https://zty624.github.io/qm2qft"
+  navbar:
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "About"
+        href: about.qmd
+  
+  sidebar: 
+    style: docked
+    pinned: true
+    search: true
+    contents:
+      - text: "TBD"
+      - text: "TBD 2"
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true
+    toc-depth: 3
