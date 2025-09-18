@@ -9,16 +9,28 @@ website:
     left:
       - text: "Home"
         href: index.qmd
+      - text: "QM II"
+        href: qm2/index.qmd
+      - text: "QFT"
+        href: qft/index.qmd
       - text: "About"
         href: about.qmd
   
   sidebar: 
-    style: docked
-    pinned: true
-    search: true
-    contents:
-      - text: "TBD"
-      - text: "TBD 2"
+    - id: qm2
+      style: docked
+      pinned: true
+      search: true
+      contents:
+        - text: "Chap 1: Basic Concepts"
+        - text: "Chap 2: TBD"
+    
+    - id: qft
+      style: docked
+      pinned: true
+      search: true
+      contents:
+        - text: "TBD"
 
 format:
   html:

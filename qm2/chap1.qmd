@@ -1,0 +1,268 @@
+---
+title: "Chapter 1: Fundamental Concepts"
+---
+
+---
+
+## 1.1 Fundamental Assumptions
+
+**Five postulates of quantum mechanics:**
+
+1. a state can be described by a vector in a Hilbert space: $\mathcal{H} \to \ket{\psi}$; also $\ket{\psi} \equiv e^{i \delta} \ket{\psi}$
+2. Observables are represented by Hermitian operators: $\hat{A} = \hat{A}^\dagger$
+3. $[\hat{x}, \hat{p}] = i \hbar$; also $[\hat{A}, \hat{B}] = \hat{A} \hat{B} - \hat{B} \hat{A}$
+
+    > Operator is a kind of Operation.
+
+4. Schrödinger equation: $i \hbar \frac{\partial}{\partial t} \ket{\psi(t)} = \hat{H} \ket{\psi(t)}$
+5. Identical particles are indistinguishable. $\psi(x_1, x_2) = \pm \psi(x_2, x_1)$
+
+---
+
+Similarities between Hirbert space and Euclidean space:
+
+|             | Hirbert Space       | Euclidean Space       |
+|-------------|---------------------|-----------------------|
+|   Basis     | $\ket{\phi_n}, \bra{\phi_n}\ket{\phi_m} = \delta_{nm}$      | $\hat{e}_n, \hat{e}_n \cdot \hat{e}_m = \delta_{nm}$       |
+|   State     | $\ket{\psi} = \sum \alpha_n \ket{\phi_n}$ | $\vec{v} = \sum a_n \hat{e}_n$ |
+| Operator | $\ket{\phi'} = \hat{O} \ket{\phi}, \hat{O} = \sum \alpha_{mn} \ket{\phi_m} \bra{\phi_n}$ | $\vec{v'} = \hat{M} \vec{v}, \hat{M} = \sum m_{ij} \hat{e}_i \hat{e}_j$ |
+| Matrix Representation | $\hat{O} \to O_{mn} = \bra{\phi_m} \hat{O} \ket{\phi_n}$ | $\hat{M} \to M_{ij} = \hat{e}_i \cdot \hat{M} \cdot \hat{e}_j$ |
+
+## 1.2 Quantum Bomb Thought Experiment
+
+**Beam Splitter:**
+
+$$
+\begin{pmatrix}
+\ket{1} \\
+\ket{2}
+\end{pmatrix}
+\to
+\frac{1}{\sqrt{2}}
+\begin{pmatrix}
+-1 & 1 \\
+1 & 1
+\end{pmatrix}
+\begin{pmatrix}
+\ket{1} \\
+\ket{2}
+\end{pmatrix}
+$$
+ 
+**Mach-Zehnder Interferometer:**
+
+TBD
+
+## 1.3 Hermitian Operators
+
+1. Linear operator: $\hat{A} (\alpha \ket{\phi} + \beta \ket{\psi}) = \alpha \hat{A} \ket{\phi} + \beta \hat{A} \ket{\psi}$
+
+    Antilinear operator: $\hat{A} (\alpha \ket{\phi} + \beta \ket{\psi}) = \alpha^* \hat{A} \ket{\phi} + \beta^* \hat{A} \ket{\psi}$
+
+    > Antilinear operator reveals the time-reversal symmetry.
+
+2. Hermitian conjugate: $\bra{\phi} \hat{A}^\dagger \ket{\psi} = (\bra{\psi} \hat{A} \ket{\phi})^*$
+
+    > $\bra{\psi} \hat{A} \ket{\psi}$ is valid only if $\hat{A}$ is Hermitian, because we don't know the sequence of the operations.
+
+## 1.4 Non-commuting Observables and Uncertainty Relations
+
+$[\hat{x}, \hat{p}] = i \hbar$, $\left\langle(\Delta x)^2\right\rangle \left\langle(\Delta p)^2\right\rangle \geq \frac{\hbar^2}{4}$
+
+### Proof of x-p Uncertainty Relation
+
+Assume $\hat{A}, \hat{B}, \hat{C}$ are Hermitian operators, and $[\hat{A}, \hat{B}] = i \hat{C}$. Let $\Delta \hat{A} = \hat{A} - \left\langle\hat{A}\right\rangle$, $\Delta \hat{B} = \hat{B} - \left\langle\hat{B}\right\rangle$. Then
+
+$$
+[\Delta \hat{A}, \Delta \hat{B}] = [\hat{A}, \hat{B}] = i \hat{C}
+$$
+
+Construct a inequality:
+
+$$
+\left\langle(\Delta \hat{A} + i \lambda \Delta \hat{B})^\dagger (\Delta \hat{A} + i \lambda \Delta \hat{B})\right\rangle \geq 0
+$$
+
+so that
+
+$$
+\left\langle(\Delta \hat{A})^2\right\rangle + \lambda^2 \left\langle(\Delta \hat{B})^2\right\rangle + i \lambda \left\langle[\Delta \hat{A}, \Delta \hat{B}]\right\rangle  = \left\langle(\Delta \hat{A})^2\right\rangle + \lambda^2 \left\langle(\Delta \hat{B})^2\right\rangle + \lambda \left\langle\hat{C}\right\rangle \geq 0
+$$
+
+we can get a quadratic inequality of $\lambda$, and we have
+
+$$
+\left\langle (\Delta \hat{B})^2 \right\rangle \lambda^2 + \left\langle\hat{C}\right\rangle \lambda + \left\langle(\Delta \hat{A})^2\right\rangle \geq 0
+$$
+
+so we conclude the discriminant must be non-positive:
+
+$$
+\left\langle\hat{C}\right\rangle^2 - 4 \left\langle(\Delta \hat{A})^2\right\rangle \left\langle(\Delta \hat{B})^2\right\rangle \leq 0
+$$
+
+also the uncertainty relation:
+
+$$
+\left\langle(\Delta \hat{A})^2\right\rangle \left\langle(\Delta \hat{B})^2\right\rangle \geq \frac{\left\langle\hat{C}\right\rangle^2}{4}
+$$
+
+### Proof of E-t Uncertainty Relation
+
+**Lemma**: $\frac{d}{dt} \left\langle\hat{A}\right\rangle = \frac{i}{\hbar} \left\langle[\hat{H}, \hat{A}]\right\rangle + \left\langle\frac{\partial \hat{A}}{\partial t}\right\rangle$
+
+> Hensenberg Picture: $\hat{A}_H(t) = e^{i \hat{H} t / \hbar} \hat{A} e^{-i \hat{H} t / \hbar}$. So the Lemma is equivalent to $\frac{d}{dt} \hat{A}_H(t) = \frac{i}{\hbar} [\hat{H}, \hat{A}_H(t)] + (\frac{\partial \hat{A}}{\partial t})_H$.
+
+**Proof**:
+
+so we have $i \hbar \dot{\hat{f}} = [\hat{f}, \hat{H}]$, 
+
+$$
+\left\langle(\Delta \hat{f})^2\right\rangle \left\langle(\Delta \hat{H})^2\right\rangle \geq \frac{\left\langle[\hat{f}, \hat{H}]\right\rangle^2}{4} = \frac{\hbar^2}{4} \left\langle\dot{\hat{f}}\right\rangle^2
+$$
+
+## 1.5 Schodinger Equation and Generator
+
+consider a $\ket{\psi (x,t)}$, and define a time evolution operator:
+
+$$
+\hat{U}(\Delta t) \ket{\psi (x, t)} = \ket{\psi (x, t + \Delta t)}
+$$
+
+which has the following properties:
+
+* $U^\dagger U = 1$
+* $U(\Delta t \to 0) \to 1$
+
+$U$ can be expressed as $\hat{U}(\Delta t) = e^{- \frac{i}{\hbar} \hat{H} \Delta t} \approx 1 - \frac{i}{\hbar} \hat{H} \Delta t$, where $\hat{H}$ is Hermitian. So we have the Schrödinger equation:
+
+$$
+i \hbar \frac{\partial}{\partial t} \ket{\psi (t)} = \hat{H} \ket{\psi (t)}
+$$
+
+> Translation operator: $\hat{T}(\Delta x) = e^{- \frac{i}{\hbar} \hat{p} \Delta x} \approx 1 - \frac{i}{\hbar} \hat{p} \Delta x$.
+>
+> Angular momentum operator: $\hat{R}(\Delta \theta) = e^{- \frac{i}{\hbar} \hat{L} \Delta \theta} \approx 1 - \frac{i}{\hbar} \hat{L} \Delta \theta$.
+
+### Active and Passive Transformations
+
+* Active transformation: $\ket{\psi} \to \ket{\psi'} = \hat{U} \ket{\psi}$
+* Passive transformation: $\ket{\psi} \to \ket{\psi'} = \hat{U}^\dagger \ket{\psi}$
+
+Example: Translation operator. Contider the original state: $\psi(x) = \bra{x} \ket{\psi}$, we have two ways to get the translated state $\psi'(x)$:
+
+* Operating on the state (active): $\psi'(x) = \bra{x} \hat{T}(\Delta x) \ket{\psi} = \psi(x - \Delta x)$
+* Operating on the basis (passive): $\psi'(x) = \bra{x} \hat{T}^\dagger(\Delta x) \ket{\psi} = \psi(x + \Delta x)$
+
+### Heisenberg Equation of Motion 
+
+Define $\dot{\left\langle \hat{f} \right\rangle} \equiv \frac{d}{d t} \left\langle f \right\rangle$, we have
+
+$$
+\begin{aligned}
+\dot{\left\langle \hat{f} \right\rangle} & \equiv \frac{d}{d t} \left\langle f \right\rangle = \frac{d}{d t} \bra{\psi(t)} \hat{f} \ket{\psi(t)} \\
+& = \left( \frac{d}{d t} \bra{\psi(t)} \right) \hat{f} \ket{\psi(t)} + \bra{\psi(t)} \hat{f} \left( \frac{d}{d t} \ket{\psi(t)} \right) + \bra{\psi(t)} \frac{\partial \hat{f}}{\partial t} \ket{\psi(t)} \\
+& = -\frac{i}{\hbar} \bra{\psi(t)} \hat{H} \hat{f} \ket{\psi(t)} + \frac{i}{\hbar} \bra{\psi(t)} \hat{f} \hat{H} \ket{\psi(t)} + \bra{\psi(t)} \frac{\partial \hat{f}}{\partial t} \ket{\psi(t)} \\
+& = \frac{\partial}{\partial t} \left\langle \hat{f} \right\rangle + \frac{i}{\hbar} \left\langle [\hat{f}, \hat{H}] \right\rangle
+\end{aligned}
+$$
+
+## 1.6 Density Matrix
+
+We introduce the consept in a two-level system:
+
+* Pure state: $\ket{\psi} = \alpha \ket{0} + \beta \ket{1}$
+* Mixed state: $\{(p_i, \ket{\psi_i})\}$, where $p_i$ is the probability of the state $\ket{\psi_i}$
+
+So the mixed state can be seen as an **ensemble** of pure states. The density matrix is defined as:
+
+$$
+\hat{\rho} = \sum_i p_i \ket{\psi_i} \bra{\psi_i}
+$$
+
+> Density Matrix of Pure/Mixed State:
+>
+> * Pure state: $\hat{\rho} = \ket{\psi} \bra{\psi}$, $\hat{\rho}^2 = \hat{\rho}$, $\text{Tr}(\hat{\rho}^2) = 1$
+> * Mixed state: $\hat{\rho} = \sum_i p_i \ket{\psi_i} \bra{\psi_i}$, $\hat{\rho}^2 \neq \hat{\rho}$, $\text{Tr}(\hat{\rho}^2) < 1$
+
+### Evolution of Density Matrix
+
+The evolution of the density matrix is given by the von Neumann equation:
+
+$$
+i \hbar \frac{\partial \hat{\rho}}{\partial t} = [\hat{H}, \hat{\rho}]
+$$
+
+**Proof**: Consider time-dependent density matrix $\hat{\rho}(t) = \sum_i p_i \ket{\psi_i(t)} \bra{\psi_i(t)}$, we have
+
+$$
+\begin{aligned}
+\frac{d}{d t} \hat{\rho} (t) & = \sum_i p_i \left( \frac{d}{d t} \ket{\psi_i(t)} \bra{\psi_i(t)} + \ket{\psi_i(t)} \frac{d}{d t} \bra{\psi_i(t)} \right) \\
+& = \sum_i p_i \left( -\frac{i}{\hbar} \hat{H} \ket{\psi_i(t)} \bra{\psi_i(t)} + \ket{\psi_i(t)} \frac{i}{\hbar} \bra{\psi_i(t)} \hat{H} \right) \\
+& = -\frac{i}{\hbar} \hat{H} \hat{\rho}(t) + \frac{i}{\hbar} \hat{\rho}(t) \hat{H} = -\frac{i}{\hbar} [\hat{H}, \hat{\rho}(t)] 
+\end{aligned}
+$$
+
+### Common Properties of Density Matrix
+
+1. **The expectation value of an observable $\hat{A}$ in density matrix formalism:**
+
+    $$
+    \left\langle \hat{A} \right\rangle = \text{Tr}(\hat{\rho} \hat{A})
+    $$
+
+    **Proof**:
+    $$
+    \begin{aligned}
+    \text{Tr}(\hat{\rho} \hat{A}) & = \sum_n \bra{n} \hat{\rho} \hat{A} \ket{n} = \sum_n \bra{n} \left( \sum_i p_i \ket{\psi_i} \bra{\psi_i} \right) \hat{A} \ket{n} \\
+    & = \sum_i p_i \sum_n \bra{n} \ket{\psi_i} \bra{\psi_i} \hat{A} \ket{n} = \sum_i p_i \bra{\psi_i} \hat{A} \ket{\psi_i} = \left\langle \hat{A} \right\rangle
+    \end{aligned}
+    $$
+2. $\text{Tr}(\hat{\rho}) = 1, \,\hat{\rho} = \hat{\rho}^\dagger, \, \text{Tr}(\hat{\rho}^2) \leq 1$ (only equal for pure state)
+
+    **Proof**: Obvious.
+
+### Reduced Density Matrix
+
+Consider a bipartite system $\mathcal{H} = \mathcal{H}_A \otimes \mathcal{H}_B$, the reduced density matrix is defined as:
+
+$$
+\hat{\rho}_A = \text{Tr}_B(\hat{\rho}) = \sum_j \left( I_A \otimes \bra{j}_B \right) \hat{\rho} \left( I_A \otimes \ket{j}_B \right)
+$$
+
+Example: Double Spin-1/2 System. In this system, a common pure state can be expressed as:
+
+$$
+\ket{\psi} = c_1 \ket{\uparrow \uparrow} + c_2 \ket{\uparrow \downarrow} + c_3 \ket{\downarrow \uparrow} + c_4 \ket{\downarrow \downarrow}, \quad \sum_i c_i^2 = 1
+$$
+
+where the density matrix is $\hat{\rho} = \ket{\psi} \bra{\psi}$. Operate **partial trace** on the second spin, we can get the reduced density matrix of the first spin:
+
+$$
+\begin{aligned}
+\hat{\rho}_1 & = \text{Tr}_2(\hat{\rho}) = \sum_{s=\uparrow, \downarrow} \left( I \otimes \bra{s} \right) \hat{\rho} \left( I \otimes \ket{s} \right) = \left( I \otimes \bra{\uparrow} \right) \hat{\rho} \left( I \otimes \ket{\uparrow} \right) + \left( I \otimes \bra{\downarrow} \right) \hat{\rho} \left( I \otimes \ket{\downarrow} \right) \\
+& = (|c_1|^2 + |c_2|^2) \ket{\uparrow} \bra{\uparrow} + (c_1 c_3^* + c_2 c_4^*) \ket{\uparrow} \bra{\downarrow} + (c_3 c_1^* + c_4 c_2^*) \ket{\downarrow} \bra{\uparrow} + (|c_3|^2 + |c_4|^2) \ket{\downarrow} \bra{\downarrow}
+\end{aligned}
+$$
+
+for example, if $\ket{\psi} = \frac{1}{\sqrt{2}} (\ket{\uparrow \downarrow} - \ket{\downarrow \uparrow})$, we have
+
+$$
+\hat{\rho}_1 = \frac{1}{2} \left( \ket{\uparrow} \bra{\uparrow} + \ket{\downarrow} \bra{\downarrow} \right)
+$$
+
+## 1.7 Quantum Entropy and Ensemble
+
+The von Neumann entropy is defined as:
+
+$$
+S = -k_B \text{Tr}(\hat{\rho} \ln \hat{\rho})
+$$
+
+### Micro-canonical Ensemble
+
+Consider a isolated system with fixed energy $E$, volume $V$ and number of particles $N$. The density matrix is given by:
+
+### Canonical Ensemble
+
+### Grand Canonical Ensemble

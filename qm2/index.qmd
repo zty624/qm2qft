@@ -1,0 +1,31 @@
+---
+title: "Quantum Mechanics II"
+---
+
+---
+
+2025 Autumn @ SJTU
+
+### Course Outline
+
+1. Fundamental concepts
+2. Quantum dynamics & geometric phase
+3. Symmerty & Angular momentum
+4. Perturbation theory
+    - time-dependent
+    - time-independent
+    - ...
+5. Scattering theory
+6. Relativistic quantum mechanics & Identical particles
+
+### Grade
+
+* 30% Homework
+* 10% In-class Participation
+* 60% Final Exam
+* **No Midterm Exam**
+
+### Books
+
+* Sakurai, Napolitano, "Modern Quantum Mechanics"
+* Landau, Lifshitz, "Quantum Mechanics: Non-Relativistic Theory"

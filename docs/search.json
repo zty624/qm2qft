@@ -1,10 +1,10 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Home",
+    "objectID": "qm2/index.html",
+    "href": "qm2/index.html",
+    "title": "Quantum Mechanics II",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "text": "2025 Autumn @ SJTU\n\nCourse Outline\n\nFundamental concepts\nQuantum dynamics & geometric phase\nSymmerty & Angular momentum\nPerturbation theory\n\ntime-dependent\ntime-independent\n…\n\nScattering theory\nRelativistic quantum mechanics & Identical particles\n\n\n\nGrade\n\n30% Homework\n10% In-class Participation\n60% Final Exam\nNo Midterm Exam\n\n\n\nBooks\n\nSakurai, Napolitano, “Modern Quantum Mechanics”\nLandau, Lifshitz, “Quantum Mechanics: Non-Relativistic Theory”"
   },
   {
     "objectID": "about.html",
@@ -12,5 +12,61 @@
     "title": "About",
     "section": "",
     "text": "About this site"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "qm2/chap1.html#fundamental-assumptions",
+    "href": "qm2/chap1.html#fundamental-assumptions",
+    "title": "Chapter 1: Fundamental Concepts",
+    "section": "1.1 Fundamental Assumptions",
+    "text": "1.1 Fundamental Assumptions\nFive postulates of quantum mechanics:\n\na state can be described by a vector in a Hilbert space: \\(\\mathcal{H} \\to \\ket{\\psi}\\); also \\(\\ket{\\psi} \\equiv e^{i \\delta} \\ket{\\psi}\\)\nObservables are represented by Hermitian operators: \\(\\hat{A} = \\hat{A}^\\dagger\\)\n\\([\\hat{x}, \\hat{p}] = i \\hbar\\); also \\([\\hat{A}, \\hat{B}] = \\hat{A} \\hat{B} - \\hat{B} \\hat{A}\\)\n\nOperator is a kind of Operation.\n\nSchrödinger equation: \\(i \\hbar \\frac{\\partial}{\\partial t} \\ket{\\psi(t)} = \\hat{H} \\ket{\\psi(t)}\\)\nIdentical particles are indistinguishable. \\(\\psi(x_1, x_2) = \\pm \\psi(x_2, x_1)\\)\n\n\nSimilarities between Hirbert space and Euclidean space:\n\n\n\n\n\n\n\n\n\nHirbert Space\nEuclidean Space\n\n\n\n\nBasis\n\\(\\ket{\\phi_n}, \\bra{\\phi_n}\\ket{\\phi_m} = \\delta_{nm}\\)\n\\(\\hat{e}_n, \\hat{e}_n \\cdot \\hat{e}_m = \\delta_{nm}\\)\n\n\nState\n\\(\\ket{\\psi} = \\sum \\alpha_n \\ket{\\phi_n}\\)\n\\(\\vec{v} = \\sum a_n \\hat{e}_n\\)\n\n\nOperator\n\\(\\ket{\\phi'} = \\hat{O} \\ket{\\phi}, \\hat{O} = \\sum \\alpha_{mn} \\ket{\\phi_m} \\bra{\\phi_n}\\)\n\\(\\vec{v'} = \\hat{M} \\vec{v}, \\hat{M} = \\sum m_{ij} \\hat{e}_i \\hat{e}_j\\)\n\n\nMatrix Representation\n\\(\\hat{O} \\to O_{mn} = \\bra{\\phi_m} \\hat{O} \\ket{\\phi_n}\\)\n\\(\\hat{M} \\to M_{ij} = \\hat{e}_i \\cdot \\hat{M} \\cdot \\hat{e}_j\\)"
+  },
+  {
+    "objectID": "qm2/chap1.html#quantum-bomb-thought-experiment",
+    "href": "qm2/chap1.html#quantum-bomb-thought-experiment",
+    "title": "Chapter 1: Fundamental Concepts",
+    "section": "1.2 Quantum Bomb Thought Experiment",
+    "text": "1.2 Quantum Bomb Thought Experiment\nBeam Splitter:\n\\[\n\\begin{pmatrix}\n\\ket{1} \\\\\n\\ket{2}\n\\end{pmatrix}\n\\to\n\\frac{1}{\\sqrt{2}}\n\\begin{pmatrix}\n-1 & 1 \\\\\n1 & 1\n\\end{pmatrix}\n\\begin{pmatrix}\n\\ket{1} \\\\\n\\ket{2}\n\\end{pmatrix}\n\\]\nMach-Zehnder Interferometer:\nTBD"
+  },
+  {
+    "objectID": "qm2/chap1.html#hermitian-operators",
+    "href": "qm2/chap1.html#hermitian-operators",
+    "title": "Chapter 1: Fundamental Concepts",
+    "section": "1.3 Hermitian Operators",
+    "text": "1.3 Hermitian Operators\n\nLinear operator: \\(\\hat{A} (\\alpha \\ket{\\phi} + \\beta \\ket{\\psi}) = \\alpha \\hat{A} \\ket{\\phi} + \\beta \\hat{A} \\ket{\\psi}\\)\nAntilinear operator: \\(\\hat{A} (\\alpha \\ket{\\phi} + \\beta \\ket{\\psi}) = \\alpha^* \\hat{A} \\ket{\\phi} + \\beta^* \\hat{A} \\ket{\\psi}\\)\n\nAntilinear operator reveals the time-reversal symmetry.\n\nHermitian conjugate: \\(\\bra{\\phi} \\hat{A}^\\dagger \\ket{\\psi} = (\\bra{\\psi} \\hat{A} \\ket{\\phi})^*\\)\n\n\\(\\bra{\\psi} \\hat{A} \\ket{\\psi}\\) is valid only if \\(\\hat{A}\\) is Hermitian, because we don’t know the sequence of the operations."
+  },
+  {
+    "objectID": "qm2/chap1.html#non-commuting-observables-and-uncertainty-relations",
+    "href": "qm2/chap1.html#non-commuting-observables-and-uncertainty-relations",
+    "title": "Chapter 1: Fundamental Concepts",
+    "section": "1.4 Non-commuting Observables and Uncertainty Relations",
+    "text": "1.4 Non-commuting Observables and Uncertainty Relations\n\\([\\hat{x}, \\hat{p}] = i \\hbar\\), \\(\\left\\langle(\\Delta x)^2\\right\\rangle \\left\\langle(\\Delta p)^2\\right\\rangle \\geq \\frac{\\hbar^2}{4}\\)\n\nProof of x-p Uncertainty Relation\nAssume \\(\\hat{A}, \\hat{B}, \\hat{C}\\) are Hermitian operators, and \\([\\hat{A}, \\hat{B}] = i \\hat{C}\\). Let \\(\\Delta \\hat{A} = \\hat{A} - \\left\\langle\\hat{A}\\right\\rangle\\), \\(\\Delta \\hat{B} = \\hat{B} - \\left\\langle\\hat{B}\\right\\rangle\\). Then\n\\[\n[\\Delta \\hat{A}, \\Delta \\hat{B}] = [\\hat{A}, \\hat{B}] = i \\hat{C}\n\\]\nConstruct a inequality:\n\\[\n\\left\\langle(\\Delta \\hat{A} + i \\lambda \\Delta \\hat{B})^\\dagger (\\Delta \\hat{A} + i \\lambda \\Delta \\hat{B})\\right\\rangle \\geq 0\n\\]\nso that\n\\[\n\\left\\langle(\\Delta \\hat{A})^2\\right\\rangle + \\lambda^2 \\left\\langle(\\Delta \\hat{B})^2\\right\\rangle + i \\lambda \\left\\langle[\\Delta \\hat{A}, \\Delta \\hat{B}]\\right\\rangle  = \\left\\langle(\\Delta \\hat{A})^2\\right\\rangle + \\lambda^2 \\left\\langle(\\Delta \\hat{B})^2\\right\\rangle + \\lambda \\left\\langle\\hat{C}\\right\\rangle \\geq 0\n\\]\nwe can get a quadratic inequality of \\(\\lambda\\), and we have\n\\[\n\\left\\langle (\\Delta \\hat{B})^2 \\right\\rangle \\lambda^2 + \\left\\langle\\hat{C}\\right\\rangle \\lambda + \\left\\langle(\\Delta \\hat{A})^2\\right\\rangle \\geq 0\n\\]\nso we conclude the discriminant must be non-positive:\n\\[\n\\left\\langle\\hat{C}\\right\\rangle^2 - 4 \\left\\langle(\\Delta \\hat{A})^2\\right\\rangle \\left\\langle(\\Delta \\hat{B})^2\\right\\rangle \\leq 0\n\\]\nalso the uncertainty relation:\n\\[\n\\left\\langle(\\Delta \\hat{A})^2\\right\\rangle \\left\\langle(\\Delta \\hat{B})^2\\right\\rangle \\geq \\frac{\\left\\langle\\hat{C}\\right\\rangle^2}{4}\n\\]\n\n\nProof of E-t Uncertainty Relation\nLemma: \\(\\frac{d}{dt} \\left\\langle\\hat{A}\\right\\rangle = \\frac{i}{\\hbar} \\left\\langle[\\hat{H}, \\hat{A}]\\right\\rangle + \\left\\langle\\frac{\\partial \\hat{A}}{\\partial t}\\right\\rangle\\)\n\nHensenberg Picture: \\(\\hat{A}_H(t) = e^{i \\hat{H} t / \\hbar} \\hat{A} e^{-i \\hat{H} t / \\hbar}\\). So the Lemma is equivalent to \\(\\frac{d}{dt} \\hat{A}_H(t) = \\frac{i}{\\hbar} [\\hat{H}, \\hat{A}_H(t)] + (\\frac{\\partial \\hat{A}}{\\partial t})_H\\).\n\nProof:\nso we have \\(i \\hbar \\dot{\\hat{f}} = [\\hat{f}, \\hat{H}]\\),\n\\[\n\\left\\langle(\\Delta \\hat{f})^2\\right\\rangle \\left\\langle(\\Delta \\hat{H})^2\\right\\rangle \\geq \\frac{\\left\\langle[\\hat{f}, \\hat{H}]\\right\\rangle^2}{4} = \\frac{\\hbar^2}{4} \\left\\langle\\dot{\\hat{f}}\\right\\rangle^2\n\\]"
+  },
+  {
+    "objectID": "qm2/chap1.html#schodinger-equation-and-generator",
+    "href": "qm2/chap1.html#schodinger-equation-and-generator",
+    "title": "Chapter 1: Fundamental Concepts",
+    "section": "1.5 Schodinger Equation and Generator",
+    "text": "1.5 Schodinger Equation and Generator\nconsider a \\(\\ket{\\psi (x,t)}\\), and define a time evolution operator:\n\\[\n\\hat{U}(\\Delta t) \\ket{\\psi (x, t)} = \\ket{\\psi (x, t + \\Delta t)}\n\\]\nwhich has the following properties:\n\n\\(U^\\dagger U = 1\\)\n\\(U(\\Delta t \\to 0) \\to 1\\)\n\n\\(U\\) can be expressed as \\(\\hat{U}(\\Delta t) = e^{- \\frac{i}{\\hbar} \\hat{H} \\Delta t} \\approx 1 - \\frac{i}{\\hbar} \\hat{H} \\Delta t\\), where \\(\\hat{H}\\) is Hermitian. So we have the Schrödinger equation:\n\\[\ni \\hbar \\frac{\\partial}{\\partial t} \\ket{\\psi (t)} = \\hat{H} \\ket{\\psi (t)}\n\\]\n\nTranslation operator: \\(\\hat{T}(\\Delta x) = e^{- \\frac{i}{\\hbar} \\hat{p} \\Delta x} \\approx 1 - \\frac{i}{\\hbar} \\hat{p} \\Delta x\\).\nAngular momentum operator: \\(\\hat{R}(\\Delta \\theta) = e^{- \\frac{i}{\\hbar} \\hat{L} \\Delta \\theta} \\approx 1 - \\frac{i}{\\hbar} \\hat{L} \\Delta \\theta\\).\n\n\nActive and Passive Transformations\n\nActive transformation: \\(\\ket{\\psi} \\to \\ket{\\psi'} = \\hat{U} \\ket{\\psi}\\)\nPassive transformation: \\(\\ket{\\psi} \\to \\ket{\\psi'} = \\hat{U}^\\dagger \\ket{\\psi}\\)\n\nExample: Translation operator. Contider the original state: \\(\\psi(x) = \\bra{x} \\ket{\\psi}\\), we have two ways to get the translated state \\(\\psi'(x)\\):\n\nOperating on the state (active): \\(\\psi'(x) = \\bra{x} \\hat{T}(\\Delta x) \\ket{\\psi} = \\psi(x - \\Delta x)\\)\nOperating on the basis (passive): \\(\\psi'(x) = \\bra{x} \\hat{T}^\\dagger(\\Delta x) \\ket{\\psi} = \\psi(x + \\Delta x)\\)\n\n\n\nHeisenberg Equation of Motion\nDefine \\(\\dot{\\left\\langle \\hat{f} \\right\\rangle} \\equiv \\frac{d}{d t} \\left\\langle f \\right\\rangle\\), we have\n\\[\n\\begin{aligned}\n\\dot{\\left\\langle \\hat{f} \\right\\rangle} & \\equiv \\frac{d}{d t} \\left\\langle f \\right\\rangle = \\frac{d}{d t} \\bra{\\psi(t)} \\hat{f} \\ket{\\psi(t)} \\\\\n& = \\left( \\frac{d}{d t} \\bra{\\psi(t)} \\right) \\hat{f} \\ket{\\psi(t)} + \\bra{\\psi(t)} \\hat{f} \\left( \\frac{d}{d t} \\ket{\\psi(t)} \\right) + \\bra{\\psi(t)} \\frac{\\partial \\hat{f}}{\\partial t} \\ket{\\psi(t)} \\\\\n& = -\\frac{i}{\\hbar} \\bra{\\psi(t)} \\hat{H} \\hat{f} \\ket{\\psi(t)} + \\frac{i}{\\hbar} \\bra{\\psi(t)} \\hat{f} \\hat{H} \\ket{\\psi(t)} + \\bra{\\psi(t)} \\frac{\\partial \\hat{f}}{\\partial t} \\ket{\\psi(t)} \\\\\n& = \\frac{\\partial}{\\partial t} \\left\\langle \\hat{f} \\right\\rangle + \\frac{i}{\\hbar} \\left\\langle [\\hat{f}, \\hat{H}] \\right\\rangle\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "qm2/chap1.html#density-matrix",
+    "href": "qm2/chap1.html#density-matrix",
+    "title": "Chapter 1: Fundamental Concepts",
+    "section": "1.6 Density Matrix",
+    "text": "1.6 Density Matrix\nWe introduce the consept in a two-level system:\n\nPure state: \\(\\ket{\\psi} = \\alpha \\ket{0} + \\beta \\ket{1}\\)\nMixed state: \\(\\{(p_i, \\ket{\\psi_i})\\}\\), where \\(p_i\\) is the probability of the state \\(\\ket{\\psi_i}\\)\n\nSo the mixed state can be seen as an ensemble of pure states. The density matrix is defined as:\n\\[\n\\hat{\\rho} = \\sum_i p_i \\ket{\\psi_i} \\bra{\\psi_i}\n\\]\n\nDensity Matrix of Pure/Mixed State:\n\nPure state: \\(\\hat{\\rho} = \\ket{\\psi} \\bra{\\psi}\\), \\(\\hat{\\rho}^2 = \\hat{\\rho}\\), \\(\\text{Tr}(\\hat{\\rho}^2) = 1\\)\nMixed state: \\(\\hat{\\rho} = \\sum_i p_i \\ket{\\psi_i} \\bra{\\psi_i}\\), \\(\\hat{\\rho}^2 \\neq \\hat{\\rho}\\), \\(\\text{Tr}(\\hat{\\rho}^2) &lt; 1\\)\n\n\n\nEvolution of Density Matrix\nThe evolution of the density matrix is given by the von Neumann equation:\n\\[\ni \\hbar \\frac{\\partial \\hat{\\rho}}{\\partial t} = [\\hat{H}, \\hat{\\rho}]\n\\]\nProof: Consider time-dependent density matrix \\(\\hat{\\rho}(t) = \\sum_i p_i \\ket{\\psi_i(t)} \\bra{\\psi_i(t)}\\), we have\n\\[\n\\begin{aligned}\n\\frac{d}{d t} \\hat{\\rho} (t) & = \\sum_i p_i \\left( \\frac{d}{d t} \\ket{\\psi_i(t)} \\bra{\\psi_i(t)} + \\ket{\\psi_i(t)} \\frac{d}{d t} \\bra{\\psi_i(t)} \\right) \\\\\n& = \\sum_i p_i \\left( -\\frac{i}{\\hbar} \\hat{H} \\ket{\\psi_i(t)} \\bra{\\psi_i(t)} + \\ket{\\psi_i(t)} \\frac{i}{\\hbar} \\bra{\\psi_i(t)} \\hat{H} \\right) \\\\\n& = -\\frac{i}{\\hbar} \\hat{H} \\hat{\\rho}(t) + \\frac{i}{\\hbar} \\hat{\\rho}(t) \\hat{H} = -\\frac{i}{\\hbar} [\\hat{H}, \\hat{\\rho}(t)]\n\\end{aligned}\n\\]\n\n\nCommon Properties of Density Matrix\n\nThe expectation value of an observable \\(\\hat{A}\\) in density matrix formalism:\n\\[\n\\left\\langle \\hat{A} \\right\\rangle = \\text{Tr}(\\hat{\\rho} \\hat{A})\n\\]\nProof: \\[\n\\begin{aligned}\n\\text{Tr}(\\hat{\\rho} \\hat{A}) & = \\sum_n \\bra{n} \\hat{\\rho} \\hat{A} \\ket{n} = \\sum_n \\bra{n} \\left( \\sum_i p_i \\ket{\\psi_i} \\bra{\\psi_i} \\right) \\hat{A} \\ket{n} \\\\\n& = \\sum_i p_i \\sum_n \\bra{n} \\ket{\\psi_i} \\bra{\\psi_i} \\hat{A} \\ket{n} = \\sum_i p_i \\bra{\\psi_i} \\hat{A} \\ket{\\psi_i} = \\left\\langle \\hat{A} \\right\\rangle\n\\end{aligned}\n\\]\n\\(\\text{Tr}(\\hat{\\rho}) = 1, \\,\\hat{\\rho} = \\hat{\\rho}^\\dagger, \\, \\text{Tr}(\\hat{\\rho}^2) \\leq 1\\) (only equal for pure state)\nProof: Obvious.\n\n\n\nReduced Density Matrix\nConsider a bipartite system \\(\\mathcal{H} = \\mathcal{H}_A \\otimes \\mathcal{H}_B\\), the reduced density matrix is defined as:\n\\[\n\\hat{\\rho}_A = \\text{Tr}_B(\\hat{\\rho}) = \\sum_j \\left( I_A \\otimes \\bra{j}_B \\right) \\hat{\\rho} \\left( I_A \\otimes \\ket{j}_B \\right)\n\\]\nExample: Double Spin-1/2 System. In this system, a common pure state can be expressed as:\n\\[\n\\ket{\\psi} = c_1 \\ket{\\uparrow \\uparrow} + c_2 \\ket{\\uparrow \\downarrow} + c_3 \\ket{\\downarrow \\uparrow} + c_4 \\ket{\\downarrow \\downarrow}, \\quad \\sum_i c_i^2 = 1\n\\]\nwhere the density matrix is \\(\\hat{\\rho} = \\ket{\\psi} \\bra{\\psi}\\). Operate partial trace on the second spin, we can get the reduced density matrix of the first spin:\n\\[\n\\begin{aligned}\n\\hat{\\rho}_1 & = \\text{Tr}_2(\\hat{\\rho}) = \\sum_{s=\\uparrow, \\downarrow} \\left( I \\otimes \\bra{s} \\right) \\hat{\\rho} \\left( I \\otimes \\ket{s} \\right) = \\left( I \\otimes \\bra{\\uparrow} \\right) \\hat{\\rho} \\left( I \\otimes \\ket{\\uparrow} \\right) + \\left( I \\otimes \\bra{\\downarrow} \\right) \\hat{\\rho} \\left( I \\otimes \\ket{\\downarrow} \\right) \\\\\n& = (|c_1|^2 + |c_2|^2) \\ket{\\uparrow} \\bra{\\uparrow} + (c_1 c_3^* + c_2 c_4^*) \\ket{\\uparrow} \\bra{\\downarrow} + (c_3 c_1^* + c_4 c_2^*) \\ket{\\downarrow} \\bra{\\uparrow} + (|c_3|^2 + |c_4|^2) \\ket{\\downarrow} \\bra{\\downarrow}\n\\end{aligned}\n\\]\nfor example, if \\(\\ket{\\psi} = \\frac{1}{\\sqrt{2}} (\\ket{\\uparrow \\downarrow} - \\ket{\\downarrow \\uparrow})\\), we have\n\\[\n\\hat{\\rho}_1 = \\frac{1}{2} \\left( \\ket{\\uparrow} \\bra{\\uparrow} + \\ket{\\downarrow} \\bra{\\downarrow} \\right)\n\\]"
+  },
+  {
+    "objectID": "qm2/chap1.html#quantum-entropy-and-ensemble",
+    "href": "qm2/chap1.html#quantum-entropy-and-ensemble",
+    "title": "Chapter 1: Fundamental Concepts",
+    "section": "1.7 Quantum Entropy and Ensemble",
+    "text": "1.7 Quantum Entropy and Ensemble\nThe von Neumann entropy is defined as:\n\\[\nS = -k_B \\text{Tr}(\\hat{\\rho} \\ln \\hat{\\rho})\n\\]\n\nMicro-canonical Ensemble\nConsider a isolated system with fixed energy \\(E\\), volume \\(V\\) and number of particles \\(N\\). The density matrix is given by:\n\n\nCanonical Ensemble\n\n\nGrand Canonical Ensemble"
   }
 ]
