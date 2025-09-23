@@ -22,7 +22,10 @@ website:
       pinned: true
       search: true
       contents:
+        - text: "Index"
+          href: qm2/index.qmd
         - text: "Chap 1: Basic Concepts"
+          href: qm2/chap1.qmd
         - text: "Chap 2: TBD"
     
     - id: qft
@@ -30,6 +33,8 @@ website:
       pinned: true
       search: true
       contents:
+        - text: "Index"
+          href: qft/index.qmd
         - text: "TBD"
 
 format:

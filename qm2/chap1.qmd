@@ -253,16 +253,53 @@ $$
 
 ## 1.7 Quantum Entropy and Ensemble
 
-The von Neumann entropy is defined as:
+Let's review the classical entropy first (Gibbs-Shannon entropy):
+
+$$
+S(X) \equiv - \sum_{x=1}^n P_x \log P_x
+$$
+
+In quantum system, the von Neumann entropy is defined as:
 
 $$
 S = -k_B \text{Tr}(\hat{\rho} \ln \hat{\rho})
 $$
 
+Here we discuss three common ensembles in statistical mechanics.
+
 ### Micro-canonical Ensemble
 
-Consider a isolated system with fixed energy $E$, volume $V$ and number of particles $N$. The density matrix is given by:
+Consider a isolated system with hamiltonian $\hat{H}$ and assume the energy value is in a small range $E$ to $E + \Delta E$. We define a Hilbert space $\mathcal{H}_{E, \Delta E}$ spanned by the eigenstates $\ket{E_i}$ of $\hat{H}$ with eigenvalues $\{\ket{1}, ..., \ket{\Omega}\}$ in this range, if $\dim \mathcal{H} = \Omega(E, \Delta E)$.
+
+Now we prove that **the density matrix of the micro-canonical ensemble is**
+
+$$
+\hat{\rho}_{MC} = \frac{1}{\Omega (E, \Delta E)} \hat{I} = 
+\frac{1}{\Omega} \sum_{i=1}^{\Omega} \ket{i} \bra{i}
+$$
+
+> In this mixed state case, each state $\ket{i}$ has the same probability $p_i = \frac{1}{\Omega}$. So $\rho_{MC}$ is coresponding to the classical micro-canonical ensemble.
 
 ### Canonical Ensemble
+
+Consider a system in contact with a heat bath at temperature $T$. In this case, the average energy of the system is fixed:
+
+$$
+\text{Tr}(\hat{\rho} \hat{H}) = \bar{E}, \, \text{Tr}(\hat{\rho}) = 1, \
+$$
+
+by the variational method, we can prove that **the density matrix of the canonical ensemble is**
+
+$$
+\hat{\rho}_{C} = \frac{1}{Z} e^{- \beta \hat{H}}, \quad Z = \text{Tr}(e^{- \beta \hat{H}}), \quad \beta = \frac{1}{k_B T}
+$$
+
+the partition function $Z$ not only is a normalization factor, but also contains all the thermodynamic information of the system.
+
+Thus we can define the Helmholtz free energy:
+
+$$
+F = -k_B T \ln Z
+$$
 
 ### Grand Canonical Ensemble

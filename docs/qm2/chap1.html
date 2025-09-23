@@ -122,7 +122,7 @@ window.Quarto = {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../qm2/index.html"> 
+    <a class="nav-link active" href="../qm2/index.html" aria-current="page"> 
 <span class="menu-text">QM II</span></a>
   </li>  
   <li class="nav-item">
@@ -144,7 +144,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Chapter 1: Fundamental Concepts</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qm2/chap1.html">Chap 1: Basic Concepts</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -165,8 +165,17 @@ window.Quarto = {
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
- <span class="menu-text">Chap 1: Basic Concepts</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="../qm2/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Index</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qm2/chap1.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Chap 1: Basic Concepts</span></a>
+  </div>
+</li>
         <li class="sidebar-item">
  <span class="menu-text">Chap 2: TBD</span>
   </li>
@@ -481,16 +490,42 @@ i \hbar \frac{\partial \hat{\rho}}{\partial t} = [\hat{H}, \hat{\rho}]
 </section>
 <section id="quantum-entropy-and-ensemble" class="level2">
 <h2 class="anchored" data-anchor-id="quantum-entropy-and-ensemble">1.7 Quantum Entropy and Ensemble</h2>
-<p>The von Neumann entropy is defined as:</p>
+<p>Let’s review the classical entropy first (Gibbs-Shannon entropy):</p>
+<p><span class="math display">\[
+S(X) \equiv - \sum_{x=1}^n P_x \log P_x
+\]</span></p>
+<p>In quantum system, the von Neumann entropy is defined as:</p>
 <p><span class="math display">\[
 S = -k_B \text{Tr}(\hat{\rho} \ln \hat{\rho})
 \]</span></p>
+<p>Here we discuss three common ensembles in statistical mechanics.</p>
 <section id="micro-canonical-ensemble" class="level3">
 <h3 class="anchored" data-anchor-id="micro-canonical-ensemble">Micro-canonical Ensemble</h3>
-<p>Consider a isolated system with fixed energy <span class="math inline">\(E\)</span>, volume <span class="math inline">\(V\)</span> and number of particles <span class="math inline">\(N\)</span>. The density matrix is given by:</p>
+<p>Consider a isolated system with hamiltonian <span class="math inline">\(\hat{H}\)</span> and assume the energy value is in a small range <span class="math inline">\(E\)</span> to <span class="math inline">\(E + \Delta E\)</span>. We define a Hilbert space <span class="math inline">\(\mathcal{H}_{E, \Delta E}\)</span> spanned by the eigenstates <span class="math inline">\(\ket{E_i}\)</span> of <span class="math inline">\(\hat{H}\)</span> with eigenvalues <span class="math inline">\(\{\ket{1}, ..., \ket{\Omega}\}\)</span> in this range, if <span class="math inline">\(\dim \mathcal{H} = \Omega(E, \Delta E)\)</span>.</p>
+<p>Now we prove that <strong>the density matrix of the micro-canonical ensemble is</strong></p>
+<p><span class="math display">\[
+\hat{\rho}_{MC} = \frac{1}{\Omega (E, \Delta E)} \hat{I} =
+\frac{1}{\Omega} \sum_{i=1}^{\Omega} \ket{i} \bra{i}
+\]</span></p>
+<blockquote class="blockquote">
+<p>In this mixed state case, each state <span class="math inline">\(\ket{i}\)</span> has the same probability <span class="math inline">\(p_i = \frac{1}{\Omega}\)</span>. So <span class="math inline">\(\rho_{MC}\)</span> is coresponding to the classical micro-canonical ensemble.</p>
+</blockquote>
 </section>
 <section id="canonical-ensemble" class="level3">
 <h3 class="anchored" data-anchor-id="canonical-ensemble">Canonical Ensemble</h3>
+<p>Consider a system in contact with a heat bath at temperature <span class="math inline">\(T\)</span>. In this case, the average energy of the system is fixed:</p>
+<p><span class="math display">\[
+\text{Tr}(\hat{\rho} \hat{H}) = \bar{E}, \, \text{Tr}(\hat{\rho}) = 1, \
+\]</span></p>
+<p>by the variational method, we can prove that <strong>the density matrix of the canonical ensemble is</strong></p>
+<p><span class="math display">\[
+\hat{\rho}_{C} = \frac{1}{Z} e^{- \beta \hat{H}}, \quad Z = \text{Tr}(e^{- \beta \hat{H}}), \quad \beta = \frac{1}{k_B T}
+\]</span></p>
+<p>the partition function <span class="math inline">\(Z\)</span> not only is a normalization factor, but also contains all the thermodynamic information of the system.</p>
+<p>Thus we can define the Helmholtz free energy:</p>
+<p><span class="math display">\[
+F = -k_B T \ln Z
+\]</span></p>
 </section>
 <section id="grand-canonical-ensemble" class="level3">
 <h3 class="anchored" data-anchor-id="grand-canonical-ensemble">Grand Canonical Ensemble</h3>
