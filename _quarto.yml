@@ -26,7 +26,8 @@ website:
           href: qm2/index.qmd
         - text: "Chap 1: Basic Concepts"
           href: qm2/chap1.qmd
-        - text: "Chap 2: TBD"
+        - text: "Chap 2: Dynamics and Geometric Phases"
+          href: qm2/chap2.qmd
     
     - id: qft
       style: docked

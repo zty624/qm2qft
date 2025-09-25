@@ -11,31 +11,6 @@
     ]
   },
   {
-    "objectID": "qft/index.html",
-    "href": "qft/index.html",
-    "title": "Quantum Field Theory",
-    "section": "",
-    "text": "why QFT?\nfield of QFT: small size, high energy",
-    "crumbs": [
-      "Home",
-      "Index"
-    ]
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Home",
-    "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
-  },
-  {
     "objectID": "qm2/chap1.html#fundamental-assumptions",
     "href": "qm2/chap1.html#fundamental-assumptions",
     "title": "Chapter 1: Fundamental Concepts",
@@ -110,6 +85,31 @@
     "crumbs": [
       "Home",
       "Chap 1: Basic Concepts"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
+    "section": "",
+    "text": "L’homme n’est qu’un roseau, le plus faible de la nature, mais c’est un roseau pensant. Il ne faut pas que l’univers entier s’arme pour l’écraser: une vapeur, une goutte d’eau, suffit pour le tuer. Mais, quand l’univers l’écraserait, l’homme serait encore plus noble que ce qui le tue, parce qu’il sait qu’il meurt, et l’avantage que l’univers a sur lui; l’univers n’en sait rien.\n\nBlaise Pascal, Pensées"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "qft/index.html",
+    "href": "qft/index.html",
+    "title": "Quantum Field Theory",
+    "section": "",
+    "text": "why QFT?\nfield of QFT: small size, high energy",
+    "crumbs": [
+      "Home",
+      "Index"
     ]
   }
 ]
