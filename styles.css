@@ -5,7 +5,7 @@ body {
         sans-serif;
 
     /* Global Bg Image */
-    background-image: url('https://github.com/zty624/qm2qft/blob/main/assets/bg.png?raw=true');
+    background-image: url('https://raw.githubusercontent.com/zty624/qm2qft/main/assets/bg.png');
     background-size: cover;        /* 自适应裁切，覆盖整个区域 */
     background-position: center;   /* 居中显示 */
     background-repeat: no-repeat;  /* 不重复 */
