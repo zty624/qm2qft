@@ -67,6 +67,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -149,8 +178,19 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#review-classical-field-theory" id="toc-review-classical-field-theory" class="nav-link active" data-scroll-target="#review-classical-field-theory">Review: Classical Field Theory</a>
+  <ul class="collapse">
+  <li><a href="#lagrangian-density-action" id="toc-lagrangian-density-action" class="nav-link" data-scroll-target="#lagrangian-density-action">Lagrangian Density &amp; Action</a></li>
+  <li><a href="#lorentz-invariance" id="toc-lorentz-invariance" class="nav-link" data-scroll-target="#lorentz-invariance">Lorentz Invariance</a></li>
+  <li><a href="#symmetries-noethers-theorem" id="toc-symmetries-noethers-theorem" class="nav-link" data-scroll-target="#symmetries-noethers-theorem">Symmetries &amp; Noether’s Theorem</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -175,10 +215,83 @@ ul.task-list li input[type="checkbox"] {
 
 
 <hr>
-<p>why QFT?</p>
-<p>field of QFT: small size, high energy</p>
+<p>Why QFT? : small size &amp; high energy</p>
+<p>Reference: Peskin, Schroeder, Tong QFT notes</p>
+<section id="review-classical-field-theory" class="level2">
+<h2 class="anchored" data-anchor-id="review-classical-field-theory">Review: Classical Field Theory</h2>
+<p>Field, is a quantity defined at every point in space and time. Rather than describing finite number of degrees of freedom in classic particle mechanics, fields describe infinite degrees of freedom.</p>
+<section id="lagrangian-density-action" class="level3">
+<h3 class="anchored" data-anchor-id="lagrangian-density-action">Lagrangian Density &amp; Action</h3>
+<p>The dynamics of the field, is governed by a <strong>Lagrangian</strong> which is a func of <span class="math inline">\(\phi (\vec{x}, t)\)</span>, <span class="math inline">\(\dot{\phi} (\vec{x}, t)\)</span>, <span class="math inline">\(\nabla \phi (\vec{x}, t)\)</span>. Usually, the Lagrangian can be expressed as:</p>
+<p><span class="math display">\[
+L(t) = \int d^3 x \mathcal{L}(\phi_a, \partial_\mu \phi_a)
+\]</span></p>
+<p>where <span class="math inline">\(a\)</span> is the index of different fields, <span class="math inline">\(\mu = 0,1,2,3\)</span> is the spacetime index. The Lagrangian density <span class="math inline">\(\mathcal{L}\)</span> is a function of the field and its first derivative.</p>
+<blockquote class="blockquote">
+<p>The Lagrangian is <strong>local</strong>, which means that <span class="math inline">\(\mathcal{L}\)</span> at <span class="math inline">\((\vec{x}, t)\)</span> only depends on the field and its derivatives at the same point <span class="math inline">\((\vec{x}, t)\)</span>. Actually, we import the field theory to ensure locality.</p>
+</blockquote>
+<p>Also we can define the <strong>action</strong>:</p>
+<p><span class="math display">\[
+S = \int d^4 x \mathcal{L}(\phi_a, \partial_\mu \phi_a)
+\]</span></p>
+<blockquote class="blockquote">
+<p>In partical Mechanics, <span class="math inline">\(\mathcal{L}\)</span> depends on <span class="math inline">\(q_i, \dot{q}_i\)</span> (no higher order derivatives); in field theory, <span class="math inline">\(\mathcal{L}\)</span> depends on <span class="math inline">\(\phi_a, \partial_\mu \phi_a\)</span>.</p>
+</blockquote>
+<p>We can determine the EOM of the field by the principle of least action, i.e.&nbsp;<span class="math inline">\(\delta S = 0\)</span>.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\delta S &amp;= \int d^4 x \left( \frac{\partial \mathcal{L}}{\partial \phi_a} \delta \phi_a + \frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi_a)} \delta (\partial_\mu \phi_a) \right) \\
+&amp;= \int d^4 x \left( \frac{\partial \mathcal{L}}{\partial \phi_a} \delta \phi_a + \frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi_a)} \partial_\mu (\delta \phi_a) \right) \\
+&amp;= \int d^4 x \left( \frac{\partial \mathcal{L}}{\partial \phi_a} - \partial_\mu \left( \frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi_a)} \right) \right) \delta \phi_a + \text{surface term}
+\end{aligned}
+\]</span></p>
+<p>So we get the <strong>Euler-Lagrange equation</strong> for fields:</p>
+<p><span class="math display">\[
+\frac{\partial \mathcal{L}}{\partial \phi_a} - \partial_\mu \left( \frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi_a)} \right) = 0
+\]</span></p>
+<section id="klein-gordon-eq." class="level4">
+<h4 class="anchored" data-anchor-id="klein-gordon-eq.">Klein-Gordon Eq.</h4>
+<p>Consider the Lagrangian density of a real scalar field <span class="math inline">\(\phi(\vec{x}, t)\)</span>:</p>
+<p><span class="math display">\[
+\mathcal{L} = \frac{1}{2} \eta^{\mu \nu} \partial_\mu \phi \partial_\nu \phi - \frac{1}{2} m^2 \phi^2 = \frac{1}{2} \dot{\phi}^2 - \frac{1}{2} (\nabla \phi)^2 - \frac{1}{2} m^2 \phi^2
+\]</span></p>
+<p>where <span class="math inline">\(\eta^{\mu \nu} = \text{diag}(1, -1, -1, -1)\)</span> is the Minkowski metric. The EOM can be derived by the Euler-Lagrange equation:</p>
+<p><span class="math display">\[
+\frac{\partial \mathcal{L}}{\partial \phi} - \partial_\mu \left( \frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi)} \right) = -m^2 \phi - \partial_\mu (\eta^{\mu \nu} \partial_\nu \phi) = (\partial_\mu \partial^\mu + m^2) \phi = 0
+\]</span></p>
+<p>which is the <strong>Klein-Gordon equation</strong>. The operator <span class="math inline">\(\partial_\mu \partial^\mu = \partial_t^2 - \nabla^2\)</span> is called the d’Alembertian, denoted as <span class="math inline">\(\Box\)</span>.</p>
+</section>
+<section id="maxwell-eqs." class="level4">
+<h4 class="anchored" data-anchor-id="maxwell-eqs.">Maxwell Eqs.</h4>
+<p>We can also derive the Maxwell equations from a Lagrangian density. The E&amp;M field is described by a 4-vector potential <span class="math inline">\(A^\mu = (\phi, \vec{A})\)</span>, where <span class="math inline">\(\phi\)</span> is the scalar potential and <span class="math inline">\(\vec{A}\)</span> is the vector potential. The electric and magnetic fields are given by:</p>
+<p><span class="math display">\[
+\vec{E} = -\nabla \phi - \frac{\partial \vec{A}}{\partial t}, \quad \vec{B} = \nabla \times \vec{A}
+\]</span></p>
+<p>The Lagrangian density for the free electromagnetic field is:</p>
+<p><span class="math display">\[
+\mathcal{L} = -\frac{1}{4} F_{\mu \nu} F^{\mu \nu}
+\]</span></p>
+<p>where <span class="math inline">\(F_{\mu \nu} = \partial_\mu A_\nu - \partial_\nu A_\mu\)</span> is the electromagnetic field tensor. The Euler-Lagrange equation gives:</p>
+<p><span class="math display">\[
+\partial_\mu F^{\mu \nu} = 0
+\]</span></p>
+</section>
+</section>
+<section id="lorentz-invariance" class="level3">
+<h3 class="anchored" data-anchor-id="lorentz-invariance">Lorentz Invariance</h3>
+<p>TBD</p>
+</section>
+<section id="symmetries-noethers-theorem" class="level3">
+<h3 class="anchored" data-anchor-id="symmetries-noethers-theorem">Symmetries &amp; Noether’s Theorem</h3>
+<p>TBD</p>
+<section id="noethers-theorem" class="level4">
+<h4 class="anchored" data-anchor-id="noethers-theorem">Noether’s Theorem</h4>
+<p>TBD</p>
 
 
+</section>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

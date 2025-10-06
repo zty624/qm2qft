@@ -1,1 +1,110 @@
-/* css styles */
+body {
+    /* Global Font Settings */
+    font-family: 
+        "Noto Sans SC", 
+        sans-serif;
+
+    /* Global Bg Image */
+    background-image: url('assets/bg.png');
+    background-size: cover;        /* 自适应裁切，覆盖整个区域 */
+    background-position: center;   /* 居中显示 */
+    background-repeat: no-repeat;  /* 不重复 */
+    background-attachment: fixed;  /* 固定背景，滚动时不移动 */
+}
+
+/* Basic Global Mask */
+#quarto-content,
+.quarto-container {
+    background-color: rgba(75, 198, 255, 0.1);
+    backdrop-filter: blur(3px);
+}
+
+/* Navbar Background Adjustment */
+.navbar {
+  background-color: rgba(182, 209, 235, 0.3) !important;
+  backdrop-filter: blur(8px);
+}
+
+/* Navbar Font Color */
+.navbar a,
+.navbar .nav-link,
+.navbar-brand,
+.navbar-nav .nav-item .nav-link {
+  color: #000000 !important;
+  font-weight: bold !important;
+}
+
+/* Navbar Link Hover Effect */
+.navbar a:hover,
+.navbar .nav-link:hover {
+  color: rgb(0, 96, 185) !important;
+}
+
+/* Sidebar Background Adjustment */
+#quarto-sidebar {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  /* border-radius: 8px; */
+  backdrop-filter: blur(5px);
+  padding: 20px;
+}
+
+/* Sidebar Font Setting */
+.sidebar a,
+.sidebar .side-link,
+.sidebar-brand {
+  color: #000000 !important;
+}
+
+/* Margin Sidebar Mask */
+#quarto-margin-sidebar {
+  background-color: rgba(255, 255, 255, 0.2);
+  /* border-radius: 8px; */
+  padding: 20px;
+}
+
+/* Main Content Mask */
+main.content,
+#quarto-document-content,
+article {
+  background-color: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(5px);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* 宽屏布局调整 */
+@media (min-width: 1200px) {
+  /* 整体容器 */
+  .page-columns {
+    display: grid !important;
+    grid-template-columns: 15% 65% 20% !important;
+    gap: 1rem !important;
+    width: 100% !important;
+  }
+  
+  /* 左侧边栏 */
+  #quarto-sidebar,
+  .sidebar-navigation {
+    grid-column: 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  /* 主内容区域 */
+  #quarto-content,
+  main.content,
+  #quarto-document-content {
+    grid-column: 2 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  /* 右侧 TOC (On this page) */
+  #quarto-margin-sidebar,
+  .margin-sidebar {
+    grid-column: 3 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}

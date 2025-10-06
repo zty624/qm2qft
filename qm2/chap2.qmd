@@ -3,3 +3,283 @@ title: "Chapter 2: Quantum Dynamics and Geometric Phases"
 ---
 
 ---
+
+## 2.1 Evolution Operator & Heisenberg Picture
+
+### Evolution Operator
+
+For an infinitesimal time evolution, the state changes as: $\ket{\psi(t + \Delta t)} = e^{- \frac{i}{\hbar} \hat{H}(t) \Delta t} \ket{\psi(t)}$
+
+So for a finite time evolution, we have:
+
+$$
+\ket{\psi(t + T)} = \lim_{N \to \infty} \left( e^{- \frac{i}{\hbar} \hat{H}(t + (N-1) \Delta t) \Delta t} \cdots e^{- \frac{i}{\hbar} \hat{H}(t + \Delta t) \Delta t} e^{- \frac{i}{\hbar} \hat{H}(t) \Delta t} \right) \ket{\psi(t)}
+$$
+
+Special cases:
+
+1. if $\hat{H}$ is time-independent, then we have:
+
+    $$
+    \ket{\psi(t + T)} = e^{- \frac{i}{\hbar} \hat{H} T} \ket{\psi(t)}
+    $$
+
+2. if $[\hat{H}(t_1), \hat{H}(t_2)] = 0$ for any $t_1$ and $t_2$, then we have:
+
+    $$
+    \ket{\psi(t + T)} = e^{- \frac{i}{\hbar} \int_t^{t+T} \hat{H}(t') dt'} \ket{\psi(t)}
+    $$
+
+**Dyson series**: for the common case, we have:
+
+$$
+\ket{\psi(t + T)} = \left( 1 + \sum_{n=1}^{\infty} \left( -\frac{i}{\hbar} \right)^n \int_t^{t+T} dt_1 \int_t^{t_1} dt_2 \cdots \int_t^{t_{n-1}} dt_n \hat{H}(t_1) \hat{H}(t_2) \cdots \hat{H}(t_n) \right) \ket{\psi(t)}
+$$
+
+which is the expansion of the time-ordered exponential: $\mathcal{T} e^{- \frac{i}{\hbar} \int_t^{t+T} \hat{H}(t') dt'}$.
+
+### Heisenberg Picture
+
+What is reality? In classical mechanics, we always think that the "mass point" is real, and its position and momentum are well-defined. But in quantum mechanics, the mass point having certain position and momentum is not real, instead, we can only measure the expectation values of a operator $\hat{A}$ in a state $\ket{\psi}$, which is $\langle \hat{A} \rangle = \bra{\psi} \hat{A} \ket{\psi}$. 
+
+Based on this idea, we have two equivalent pictures to describe the time evolution of a quantum system: Schrödinger picture and Heisenberg picture. In Schrödinger picture, the state $\ket{\psi(t)}$ evolves with time, while the operator $\hat{A}$ is time-independent. In Heisenberg picture, we let the operator evolve with time, while the state is time-independent.
+
+TBD
+
+## 2.2 Simple Harmonic Oscillator & Coherent States
+
+### Ladder Operators & Number States
+
+Let us derive the coherent states from scratch. We start with the Hamiltonian of a simple harmonic oscillator (SHO):
+
+$$
+\hat{H} = \frac{\hat{p}^2}{2m} + \frac{1}{2} m \omega^2 \hat{x}^2
+$$
+
+We can express the position and momentum operators in terms of the ladder operators $\hat{a}$ and $\hat{a}^\dagger$:
+
+$$
+\hat{a} = \sqrt{\frac{m \omega}{2 \hbar}} \left( \hat{x} + \frac{i}{m \omega} \hat{p} \right), \quad \hat{a}^\dagger = \sqrt{\frac{m \omega}{2 \hbar}} \left( \hat{x} - \frac{i}{m \omega} \hat{p} \right)
+$$
+
+> Or $a^\dagger$ the creation operator, and $a$ the annihilation operator.
+
+Then, the Hamiltonian can be rewritten as:
+
+$$
+\hat{H} = \hbar \omega \left( \hat{a}^\dagger \hat{a} + \frac{1}{2} \right)
+$$
+
+and the commutation relation is:
+
+$$
+[\hat{a}, \hat{a}^\dagger] = 1
+$$
+
+Now we consider the number states $\ket{n}$, which are eigenstates of the number operator $\hat{N} = \hat{a}^\dagger \hat{a} \equiv \frac{\hat{H}}{\hbar \omega} - \frac{1}{2}$. We have another commutation relation:
+
+$$
+[\hat{N}, \hat{a}] = -\hat{a}, \quad [\hat{N}, \hat{a}^\dagger] = \hat{a}^\dagger
+$$
+
+Put $\hat{N}$ on the $\ket{n}$, we have:
+
+$$
+\hat{N} \ket{n} = \hat{a}^\dagger \hat{a} \ket{n} = \left(\frac{E_n}{\hbar \omega} - \frac{1}{2} \right) \ket{n} \equiv n \ket{n}
+$$
+
+add another $\hat{a}$ on above equation, we get:
+
+$$
+\hat{a} \hat{N} \ket{n} = n \hat{a} \ket{n} = (\hat{a}^\dagger \hat{a} + [\hat{a}, \hat{a}^\dagger]) \hat{a} \ket{n} = \hat{N} \hat{a}\ket{n} + \hat{a} \ket{n}
+$$
+
+So 
+
+$$
+\hat{N} \hat{a} \ket{n} = (n-1) \hat{a} \ket{n}
+$$
+
+**Similarly, we can show that:**
+
+$$
+\hat{a} \ket{n} = C \ket{n-1}, \quad \hat{a}^\dagger \ket{n} = C' \ket{n+1}
+$$
+
+If we want to find the coefficients $C$ and $C'$, we can use the normalization condition:
+
+$$
+\bra{n}\ket{\hat{a}^\dagger \hat{a} \ket{n} = n \bra{n} n } = n
+$$ 
+
+so
+
+$$
+C = \sqrt{n}, \quad C' = \sqrt{n+1}
+$$
+
+Using induction relation, we can find the explicit form of the number states:
+
+$$
+\ket{n} = \frac{(\hat{a}^\dagger)^n}{\sqrt{n!}} \ket{0}
+$$
+
+
+### Dynamics of Oscillator
+
+By Heisenberg equation of motion, we have:
+
+$$
+\frac{d}{dt} \hat{a}(t) = \frac{1}{i \hbar} [\hat{a}(t), \hat{H}] = -i \omega \hat{a}(t)
+$$
+
+so $\hat{a}(t) = \hat{a}(0) e^{-i \omega t}$, and similarly $\hat{a}^\dagger(t) = \hat{a}^\dagger(0) e^{i \omega t}$.
+
+So we have the momentum and position operators as:
+
+$$
+\hat{x}(t) = \sqrt{\frac{\hbar}{2 m \omega}} \left( \hat{a}(0) e^{-i \omega t} + \hat{a}^\dagger(0) e^{i \omega t} \right), \quad \hat{p}(t) = -i \sqrt{\frac{\hbar m \omega}{2}} \left( \hat{a}(0) e^{-i \omega t} - \hat{a}^\dagger(0) e^{i \omega t} \right)
+$$
+
+Or in real form:
+
+$$
+\begin{aligned}
+\hat{x}(t) &= \hat{x}(0) \cos(\omega t) + \frac{\hat{p}(0)}{m \omega} \sin(\omega t) \\
+\hat{p}(t) &= \hat{p}(0) \cos(\omega t) - m \omega \hat{x}(0) \sin(\omega t)
+\end{aligned}
+$$
+
+While the space and momentum operator oscillate with time, the observation of x \& p does not oscillate:
+
+$$
+\bra{\psi}x\ket{\psi} = \sqrt{\frac{\hbar}{2 m \omega}} \left( \bra{\psi} \hat{a}(0) \ket{\psi} e^{-i \omega t} + \bra{\psi} \hat{a}^\dagger(0) \ket{\psi} e^{i \omega t} \right)
+$$
+
+TBD
+
+> If we are on the eigenstate of the Hamiltonian, then we can't observe the oscillation of particles.
+
+
+So how can we create a certain state with oscillating expectation values of x \& p? The answer is the **coherent states**, which are the most classical states in quantum mechanics.
+
+### Coherent States
+
+**Definition**: A coherent state $\ket{\alpha}$ is defined as the eigenstate of the annihilation operator $\hat{a}$:
+
+$$
+\hat{a} \ket{\alpha} = \alpha \ket{\alpha}
+$$
+
+where $\alpha$ is a complex number. 
+
+Now we will derive the explicit form of the coherent state. We can express $\ket{\alpha}$ as a superposition of number states:
+
+$$
+\ket{\alpha} = \sum_{n=0}^{\infty} c_n \ket{n}
+$$
+
+add the annihilation operator on both sides, we have:
+
+$$
+\hat{a} \ket{\lambda} = \sum_{n=0}^{\infty} c_n \hat{a} \ket{n} = \sum_{n=1}^{\infty} c_n \sqrt{n} \ket{n-1} = \sum_{n=0}^{\infty} c_{n+1} \sqrt{n+1} \ket{n}
+$$
+
+So we have the recurrence relation:
+
+$$
+\alpha c_n = c_{n+1} \sqrt{n+1} \Rightarrow c_{n+1} = \frac{\alpha}{\sqrt{n+1}} c_n \Rightarrow c_n = \frac{\alpha^n}{\sqrt{n!}} c_0
+$$
+
+By the normalization condition:
+
+$$
+\begin{aligned}
+\sum_{n=0}^{\infty} |c_n|^2 &= 1 \\
+\sum_{n=0}^{\infty} |c_0|^2 \frac{|\alpha|^{2n}}{n!} &= 1 \Rightarrow |c_0|^2 e^{|\alpha|^2} = 1 \Rightarrow c_0 = e^{-|\alpha|^2/2}
+\end{aligned}
+$$
+
+So we have the explicit form of the coherent state:
+
+$$
+\ket{\alpha} = e^{-|\alpha|^2/2} \sum_{n=0}^{\infty} \frac{\alpha^n}{\sqrt{n!}} \ket{n}
+$$
+
+**Discussions:**
+
+1. In space representation:
+
+    $$
+    \ket{\alpha} = e^{-|\alpha|^2/2} \sum_{n=0}^{\infty} \frac{\alpha^n}{\sqrt{n!}} \frac{(\hat{a}^\dagger)^n}{\sqrt{n!}} \ket{0} = e^{-|\alpha|^2/2} e^{\alpha \hat{a}^\dagger} \ket{0}
+    $$
+
+    So we have $\phi_\alpha (x) = \bra{x}\ket{\alpha}$: 
+
+    $$
+    \phi_\alpha (x) = e^{-|\alpha|^2/2} \bra{x} e^{\alpha \hat{a}^\dagger} \ket{0} 
+    $$
+
+    Utilizing the Baker-Campbell-Hausdorff formula, we have:
+
+    $$
+    e^{\alpha \hat{a}^\dagger} = e^{-\frac{|\alpha|^2}{2}} e^{\alpha \hat{a}^\dagger - \alpha^* \hat{a}} e^{\alpha^* \hat{a}}
+    $$
+
+    > BCH formula: $e^{\hat{A} + \hat{B}} = e^{-\frac{1}{2} [\hat{A}, \hat{B}]} e^{\hat{A}} e^{\hat{B}}$, if $[\hat{A}, [\hat{A}, \hat{B}]] = [\hat{B}, [\hat{A}, \hat{B}]] = 0$.
+
+    So finally we have:
+
+    $$
+    \phi_\alpha (x) = \left( \frac{m \omega}{\pi \hbar} \right)^{1/4} \exp \left( -\frac{m \omega}{2 \hbar} (x - x_0)^2 + \frac{i p_0}{\hbar} (x - x_0/2) \right)
+    $$
+
+## 2.3 Landau Level
+
+Landau levels are the quantized energy levels of a charged particle in a uniform magnetic field.
+
+Consider the magnetic field $\mathbf{B} = B \hat{z}$, we choose the **symmetric gauge**:
+
+$$
+\vec{A} = (A_x, A_y) = \frac{B}{2} (-y, x)
+$$
+
+So the Hamiltonian of a charged particle in the magnetic field is:
+
+$$
+H_0 = \frac{1}{2m} \vec{\pi}^2 = \frac{1}{2m} (\vec{p} - q \vec{A})^2 = \frac{1}{2m} \left[ (p_x + \frac{qB}{2} y)^2 + (p_y - \frac{qB}{2} x)^2 \right]
+$$
+
+
+## 2.4 Gauge transformation & Aharonov-Bohm Effect
+
+### GT in Classical Mechanics
+
+Let's review the GT in EM first. We can write the Maxwell Eqs. in potential's form:
+
+$$
+\begin{aligned}
+- \nabla^2 \phi - \frac{\partial}{\partial t} (\nabla \cdot \vec{A}) &= \frac{\rho}{\epsilon_0} \\
+
+\nabla \times (\nabla \times \vec{A}) &= \mu_0 \vec{J} - \frac{1}{c^2} \frac{\partial^2 \vec{A}}{\partial t^2} - \frac{1}{c^2} \nabla \frac{\partial \phi}{\partial t}
+\end{aligned}
+$$
+
+and the counterpart GT is:
+
+$$
+\begin{aligned}
+\vec{A} \to \vec{A} + \nabla \Lambda \\
+\phi \to \phi - \frac{\partial \Lambda}{\partial t}
+\end{aligned}
+$$
+
+This kind of GT is called **local**, which don't change the physical E&M field. Actually, if we write the forms in 4-dim format, ...TBD.
+
+### GT in Quantum Mechanics
+
+In Quantum Mechanics, to ensure the 
+
+$$
+\psi(\vec{x}, t) \to \psi'(\vec{x}, t) = e^{i \frac{e}{\hbar} \Lambda(\vec{x}, t)} \psi(\vec{x}, t)
+$$

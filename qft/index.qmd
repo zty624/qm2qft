@@ -4,6 +4,95 @@ title: "Quantum Field Theory"
 
 ---
 
-why QFT?
+Why QFT? : small size & high energy
 
-field of QFT: small size, high energy
+Reference: Peskin, Schroeder, Tong QFT notes
+
+## Review: Classical Field Theory
+
+Field, is a quantity defined at every point in space and time. Rather than describing finite number of degrees of freedom in classic particle mechanics, fields describe infinite degrees of freedom.
+
+### Lagrangian Density & Action
+
+The dynamics of the field, is governed by a **Lagrangian** which is a func of $\phi (\vec{x}, t)$, $\dot{\phi} (\vec{x}, t)$, $\nabla \phi (\vec{x}, t)$. Usually, the Lagrangian can be expressed as:
+
+$$
+L(t) = \int d^3 x \mathcal{L}(\phi_a, \partial_\mu \phi_a)
+$$
+
+where $a$ is the index of different fields, $\mu = 0,1,2,3$ is the spacetime index. The Lagrangian density $\mathcal{L}$ is a function of the field and its first derivative.
+
+> The Lagrangian is **local**, which means that $\mathcal{L}$ at $(\vec{x}, t)$ only depends on the field and its derivatives at the same point $(\vec{x}, t)$. Actually, we import the field theory to ensure locality.
+
+Also we can define the **action**: 
+
+$$
+S = \int d^4 x \mathcal{L}(\phi_a, \partial_\mu \phi_a)
+$$
+
+> In partical Mechanics, $\mathcal{L}$ depends on $q_i, \dot{q}_i$ (no higher order derivatives); in field theory, $\mathcal{L}$ depends on $\phi_a, \partial_\mu \phi_a$.
+
+We can determine the EOM of the field by the principle of least action, i.e. $\delta S = 0$.
+
+$$
+\begin{aligned}
+\delta S &= \int d^4 x \left( \frac{\partial \mathcal{L}}{\partial \phi_a} \delta \phi_a + \frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi_a)} \delta (\partial_\mu \phi_a) \right) \\
+&= \int d^4 x \left( \frac{\partial \mathcal{L}}{\partial \phi_a} \delta \phi_a + \frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi_a)} \partial_\mu (\delta \phi_a) \right) \\
+&= \int d^4 x \left( \frac{\partial \mathcal{L}}{\partial \phi_a} - \partial_\mu \left( \frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi_a)} \right) \right) \delta \phi_a + \text{surface term}
+\end{aligned}
+$$
+
+So we get the **Euler-Lagrange equation** for fields:
+
+$$
+\frac{\partial \mathcal{L}}{\partial \phi_a} - \partial_\mu \left( \frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi_a)} \right) = 0
+$$
+
+#### Klein-Gordon Eq.
+
+Consider the Lagrangian density of a real scalar field $\phi(\vec{x}, t)$:
+
+$$
+\mathcal{L} = \frac{1}{2} \eta^{\mu \nu} \partial_\mu \phi \partial_\nu \phi - \frac{1}{2} m^2 \phi^2 = \frac{1}{2} \dot{\phi}^2 - \frac{1}{2} (\nabla \phi)^2 - \frac{1}{2} m^2 \phi^2
+$$
+
+where $\eta^{\mu \nu} = \text{diag}(1, -1, -1, -1)$ is the Minkowski metric. The EOM can be derived by the Euler-Lagrange equation:
+
+$$
+\frac{\partial \mathcal{L}}{\partial \phi} - \partial_\mu \left( \frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi)} \right) = -m^2 \phi - \partial_\mu (\eta^{\mu \nu} \partial_\nu \phi) = (\partial_\mu \partial^\mu + m^2) \phi = 0
+$$
+
+which is the **Klein-Gordon equation**. The operator $\partial_\mu \partial^\mu = \partial_t^2 - \nabla^2$ is called the d'Alembertian, denoted as $\Box$.
+
+#### Maxwell Eqs.
+
+We can also derive the Maxwell equations from a Lagrangian density. The E&M field is described by a 4-vector potential $A^\mu = (\phi, \vec{A})$, where $\phi$ is the scalar potential and $\vec{A}$ is the vector potential. The electric and magnetic fields are given by:
+
+$$
+\vec{E} = -\nabla \phi - \frac{\partial \vec{A}}{\partial t}, \quad \vec{B} = \nabla \times \vec{A}
+$$
+
+The Lagrangian density for the free electromagnetic field is:
+
+$$
+\mathcal{L} = -\frac{1}{4} F_{\mu \nu} F^{\mu \nu}
+$$
+
+where $F_{\mu \nu} = \partial_\mu A_\nu - \partial_\nu A_\mu$ is the electromagnetic field tensor. The Euler-Lagrange equation gives:
+
+$$
+\partial_\mu F^{\mu \nu} = 0
+$$
+
+### Lorentz Invariance
+
+TBD
+
+### Symmetries & Noether's Theorem
+
+TBD
+
+#### Noether's Theorem
+
+TBD
+
